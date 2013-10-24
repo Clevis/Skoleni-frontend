@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="cs">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Frontend školení - aneb jak pečeme speciality</title>
+
+		<meta name="author" content="Matěj Šimek">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/solarized-custom.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Frontend školení</h1>
+					<h3>aneb náhled pod pokličku pečení specialit v Clevisu</h3>
+					<p>
+						<small>dnes s vámi vaří z vody: <a href="http://www.matejsimek.cz">Matěj Šimek</a></small>
+					</p>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					## Menü
+
+					0. 15 minutek základů kódování na 220°
+					 * příprava surovin
+					 * éčka v HTML
+					 * CSS glutamát
+					 * želé
+					0. Práce s nožem
+					0. Psaní jídelního lístku
+					0. Aranžování jídla
+					0. Kuchařka
+					0. Pohlreich v kuchyni
+					</script>
+				</section>
+
+				<section data-markdown data-background="http://c.searspartsdirect.com/lis_png/PLDM/M0311283-00002.png">
+					<script type="text/template">
+					## 30 minutek základů kódování na 220°
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					### Příprava surovin
+					* Fork kostry projektu
+
+					```
+					build/
+					docs/
+					img/
+					js/
+					libs/
+					sass/
+					  comps/
+					  parts/
+					  screen.sass
+					index.html
+					```
+
+					* Bower: `bower install`
+					* CDN + local fallback pro rozšířené knihovny
+
+					<pre><code>&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js">&lt;/script&gt;
+					&lt;script&gt;window.jQuery || document.write('&lt;script src="libs/jquery/jquery.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;
+					</code></pre>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					### éčka v HTML
+					* HTML = DATA, jejich popis a struktura
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					#### Každý element či vlastnost elementu má svůj definovaný význam
+
+					* `hX` - nadpis (či podnadpis) pro danou část dokumentu
+					* `ol` - tříděný seznam položek
+					* `article` - nezávislý obsah typu článek, příspěvek fóra, blogpost, komentář, ...
+
+					>	Authors must not use elements, attributes, or attribute values for purposes other than their appropriate intended semantic purpose, as doing so prevents software from correctly processing the page. @WHATWG
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					#### K rozšíření významu elementu používáme třídy
+
+					Pojmenování tříd:
+					> authors are encouraged to use values that describe the nature of the content, rather than values that describe the desired presentation of the content. @WHATWG
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					##### Udržitelnost
+
+					Šílenci v Yahoo
+					```html
+					<div class="Bfc M-10">
+					  <div class="Fl-start Mend-10 W-25">column 1</div>
+					  <div class="Bfc">column 2</div>
+					</div>
+					```
+
+					Ti ostatní
+					```html
+					<div class="content-wrap">
+					  <aside class="sidebar">column 1</aside>
+					  <section class="content">column 2</section>
+					</div>
+					```
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					### Přístupnost
+					* WAI - [Web Accessibility Initiative](http://www.w3.org/WAI/)
+					* WAI-ARIA - [Accessible Rich Internet Applications](http://www.w3.org/TR/wai-aria/)
+					* Joshue O Connor - [Pro HTML5 Accessibility](www.amazon.com/Pro-HTML5-Accessibility-Joshue-Connor-ebook/dp/B007N4WSQU)
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					### Sémantický web
+					## IS NOT DEAD
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					**schema.org:** Google výsledky (people, events, reviews, products, recipes and breadcrumb navigations)
+
+					![recipe](https://www.google.com/help/hc/images/webmasters_173379_en.png)
+					![events](https://www.google.com/help/hc/images/webmasters/webmasters_164506_richsnippets_multipleevent_en.gif)
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					**OpenGraph:** Facebook
+
+					![Příklad použití OpenGraph](https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-prn1/851586_188416314641828_1439591137_n.png)
+
+					[Open Graph Overview](https://developers.facebook.com/docs/opengraph/overview/)
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					Klasické html
+					```html
+					<div>
+					 <h1>Avatar</h1>
+					 <span>Director: James Cameron (born August 16, 1954)</span>
+					 <span>Science fiction</span>
+					 <a href="../movies/avatar-theatrical-trailer.html">Trailer</a>
+					</div>
+					```
+
+					Metadata schema.org
+					```html
+					<div itemscope itemtype ="http://schema.org/Movie">
+					  <h1 itemprop="name">Avatar</h1>
+					  <div itemprop="director" itemscope itemtype="http://schema.org/Person">
+					  Director: <span itemprop="name">James Cameron</span> (born <span itemprop="birthDate">August 16, 1954)</span>
+					  </div>
+					  <span itemprop="genre">Science fiction</span>
+					  <a href="../movies/avatar-theatrical-trailer.html" itemprop="trailer">Trailer</a>
+					</div>
+					```
+
+					[Getting started with schema.org](http://schema.org/docs/gs.html),
+					[Google Structured Data Testing Tool](http://www.google.com/webmasters/tools/richsnippets)
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					Skvělá HTML5 dokumentace
+
+					[HTML: The Living Standard](http://developers.whatwg.org/)
+					</script>
+				</section>
+
+
+				<section data-markdown>
+					<script type="text/template">
+					### CSS glutamát
+					[LESS](http://lesscss.org), [SASS](http://sass-lang.com), [Stylus](http://learnboost.github.io/stylus/)
+
+					* Výhody
+					 + Parametrizace
+					 + Znovupoužitelnost
+					 + Udržitelnost
+					* Nevýhody
+					 - nutnost kompilace
+					 - zneužívání zanořování - max. 3 úrovně!
+					 - bloat
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					Příklad
+					```scss
+					// Generation of classes for image sprites based on $count @Mobilove
+					$i: $count
+					@while $i > 0
+						._i#{$i}
+							background-position: (-$i*100 + 100%) 0
+						$i: $i - 1
+					```
+
+					```css
+					.performers ._i7 {background-position:-600% 0}
+					.performers ._i6 {background-position:-500% 0}
+					.performers ._i5 {background-position:-400% 0}
+					.performers ._i4 {background-position:-300% 0}
+					.performers ._i3 {background-position:-200% 0}
+					.performers ._i2 {background-position:-100% 0}
+					.performers ._i1 {background-position:0% 0}
+					```
+					</script>
+				</section>
+
+				<section data-markdown data-background="http://i.imgur.com/YuIrD.jpg">
+					<script type="text/template">
+					### Webpage je želé
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					#### Situace
+					* Nezměrný počet různých zařízení s přístupem na web
+					* Budoucnost nepředvídatelná
+					* Způsob boje: responsive
+					</script>
+				</section>
+
+				<section data-markdown data-background="http://mrlagency.co.uk/wp-content/uploads/2012/11/Lego.jpg">
+					<script type="text/template">
+					## Práce s nožem
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					### [Frontbase ideology](https://github.com/Clevis/Clevispace/wiki/Frontbase)
+
+					* Stavební bloky - komponenty
+					* Kombinace bloků - kompozice
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					## Psaní jídelního lístku
+					Dokumentování CSS zlepšuje čitelnost a udržitelnost kódu
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					[StyleDocco](http://jacobrask.github.io/styledocco/)
+
+					```css
+					/* Provides extra visual weight and identifies the primary action in a set of buttons.
+
+					    <button class="btn primary">Primary</button>
+					*/
+					.btn.primary {
+					    background: steelblue;
+					    color: snow;
+					    border: 2px outset steelblue;
+					}
+					```
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					[KSS](http://warpspire.com/kss/)
+
+					```css
+					// A button suitable for giving stars to someone.
+					//
+					// :hover             - Subtle hover highlight.
+					// .stars-given       - A highlight indicating you've already given a star.
+					// .stars-given:hover - Subtle hover highlight on top of stars-given styling.
+					// .disabled          - Dims the button to indicate it cannot be used.
+					//
+					// Styleguide 2.1.3.
+					a.button.star{ ... }
+					```
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					## Aranžování jídla
+					Kompilace, minifikace a spojení souborů, sledování změn, servírování souborů, ...
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					![](http://gruntjs.com/img/grunt-logo.png)
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					[GRUNT](http://gruntjs.com) - The JavaScript Task Runner
+
+					* Instalace: `npm install -g grunt-cli`
+					* Konfigurace: `/Gruntfile.js`
+					* Příklad tasků:
+					 * `grunt` - produkční build
+					 * `grunt dev` - vývojový režim
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					## Kuchařka
+					![rocket](https://github.global.ssl.fastly.net/images/icons/emoji/rocket.png)
+
+					Frontbase - a starter fuel for web projects
+
+					https://github.com/Clevis/Frontbase
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					## Pohlreich v kuchyni
+					Produktivní tipy & debug - názorná ukázka…
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					## Lunch time...
+					</script>
+				</section>
+
+
+
+
+<!--
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			// Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				// Display controls in the bottom right corner
+				controls: false,
+				// Display a presentation progress bar
+				progress: true,
+				// Push each slide change to the browser history
+				history: true,
+				// Enable keyboard shortcuts for navigation
+				keyboard: true,
+				// Enable touch events for navigation
+				touch: true,
+				// Enable the slide overview mode
+				overview: true,
+				// Vertical centering of slides
+				center: true,
+				// Loop the presentation
+				loop: false,
+				// Change the presentation direction to be RTL
+				rtl: false,
+				// Number of milliseconds between automatically proceeding to the
+				// next slide, disabled when set to 0, this value can be overwritten
+				// by using a data-autoslide attribute on your slides
+				autoSlide: 0,
+				// Enable slide navigation via mouse wheel
+				mouseWheel: true,
+				// Transition style
+				transition: 'zoom', // default/cube/page/concave/zoom/linear/fade/none
+				// Transition speed
+				transitionSpeed: 'default', // default/fast/slow
+				// Transition style for full page backgrounds
+				backgroundTransition: 'default', // default/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					// Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+					// Interpret Markdown in <section> elements
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+					// Syntax highlight for <code> elements
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+					// Zoom in and out with Alt+click
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+					// Speaker notes
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+					// Remote control your reveal.js presentation using a touch device
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+					// MathJax
+					// { src: 'plugin/math/math.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
